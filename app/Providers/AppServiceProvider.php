@@ -24,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+                    };
+
         $admin_lang = DB::table('admin_languages')->where('is_default','=',1)->first();
         App::setlocale($admin_lang->name);
         User::chekValidation();

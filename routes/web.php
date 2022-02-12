@@ -951,12 +951,4 @@ Route::group(['middleware'=>'permissions:super'],function(){
 
 // ************************************ FRONT SECTION **********************************************
   Route::get('/', 'Admin\LoginController@showLoginForm')->name('front.index');
-
-  // PRODCT SECTION
-  Route::get('/item/{slug}','Front\CatalogController@product')->name('front.product');
-  Route::get('/afbuy/{slug}','Front\CatalogController@affProductRedirect')->name('affiliate.product');
-  Route::get('/item/quick/view/{id}/','Front\CatalogController@quick')->name('product.quick');
-  Route::post('/item/review','Front\CatalogController@reviewsubmit')->name('front.review.submit');
-  Route::get('/item/view/review/{id}','Front\CatalogController@reviews')->name('front.reviews');
-  // PRODCT SECTION ENDS
   

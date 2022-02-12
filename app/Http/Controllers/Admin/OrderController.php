@@ -8,13 +8,11 @@ use App\Models\Generalsetting;
 use App\Models\Order;
 use App\Models\OrderTrack;
 use App\Models\User;
-use App\Models\Bag;
 use App\Models\Product;
 use App\Models\VendorOrder;
 use Datatables;
 use PDF;
 use Illuminate\Http\Request;
-use DB;
 
 class OrderController extends Controller
 {
@@ -243,20 +241,8 @@ class OrderController extends Controller
             return redirect()->route('admin.dashboard')->with('unsuccess',__('Sorry the page does not exist.'));
         }
         $order = Order::findOrFail($id);
-        // $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
-        $order_no = $order->order_number;
-        // $bags = Bag::where('order_no', $order_no)->get();
-
-        $bags = DB::table('bags')
-        ->join('users','bags.user_id','=','users.id')
-        ->join('products','bags.product_id','=','products.id')
-        ->where('bags.order_no','=',$order_no)
-        ->orderby('bags.id','desc')
-        ->get();
-        
-        // dd($bags);
-        
-        return view('admin.order.details',compact('order','bags'));
+        $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
+        return view('admin.order.details',compact('order','cart'));
     }
     public function invoice($id)
     {
