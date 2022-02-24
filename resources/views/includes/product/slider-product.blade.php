@@ -4,7 +4,7 @@
                                 {{-- check  If This vendor status is active --}}
                                 @if($prod->user->is_vendor == 2)
 
-										<a href="{{ route('front.product', $prod->slug) }}" class="item">
+										<a href="{{ route('admin-prod-index', $prod->slug) }}" class="item">
 											<div class="item-img">
 												@if(!empty($prod->features))
 													<div class="sell-area">
@@ -83,7 +83,7 @@
 								@else 
 
 
-										<a href="{{ route('front.product', $prod->slug) }}" class="item">
+										<a href="{{ route('admin-prod-index', $prod->slug) }}" class="item">
 											<div class="item-img">
 												@if(!empty($prod->features))
 													<div class="sell-area">

@@ -21,7 +21,7 @@ class ReportController extends Controller
 	         return Datatables::of($datas)
 	                            ->addColumn('product', function(Report $data) {
 	                                $name = mb_strlen(strip_tags($data->product->name),'utf-8') > 50 ? mb_substr(strip_tags($data->product->name),0,50,'utf-8').'...' : strip_tags($data->product->name);
-	                                $product = '<a href="'.route('front.product', $data->product->slug).'" target="_blank">'.$name.'</a>';
+	                                $product = '<a href="'.route('admin-prod-index', $data->product->slug).'" target="_blank">'.$name.'</a>';
 	                                return $product;
 	                            })
 	                            ->addColumn('reporter', function(Report $data) {

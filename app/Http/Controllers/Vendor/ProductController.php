@@ -54,7 +54,7 @@ class ProductController extends Controller
          return Datatables::of($datas)
                             ->editColumn('name', function(Product $data) {
                                 $name = strlen(strip_tags($data->name)) > 50 ? substr(strip_tags($data->name),0,50).'...' : strip_tags($data->name);
-                                $id = '<small>Product ID: <a href="'.route('front.product', $data->slug).'" target="_blank">'.sprintf("%'.08d",$data->id).'</a></small>';
+                                $id = '<small>Product ID: <a href="'.route('admin-prod-index', $data->slug).'" target="_blank">'.sprintf("%'.08d",$data->id).'</a></small>';
                                 return  $name.'<br>'.$id;
                             })
                             ->editColumn('price', function(Product $data) {
@@ -87,7 +87,7 @@ class ProductController extends Controller
          return Datatables::of($datas)
                             ->editColumn('name', function(Product $data) {
                                 $name = strlen(strip_tags($data->name)) > 50 ? substr(strip_tags($data->name),0,50).'...' : strip_tags($data->name);
-                                $id = '<small>Product ID: <a href="'.route('front.product', $data->slug).'" target="_blank">'.sprintf("%'.08d",$data->id).'</a></small>';
+                                $id = '<small>Product ID: <a href="'.route('admin-prod-index', $data->slug).'" target="_blank">'.sprintf("%'.08d",$data->id).'</a></small>';
                                 return  $name.'<br>'.$id;
                             })
                             ->editColumn('price', function(Product $data) {

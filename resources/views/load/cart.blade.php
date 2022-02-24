@@ -16,7 +16,7 @@
 														<li class="product cremove{{ $product['item']['id'].$product['size'].$product['color'].str_replace(str_split(' ,'),'',$product['values']) }}">
 															<div class="product-details">
 																<div class="content">
-																	<a href="{{ route('front.product',$product['item']['slug']) }}"><h4 class="product-title">{{mb_strlen($product['item']['name'],'utf-8') > 45 ? mb_substr($product['item']['name'],0,45,'utf-8').'...' : $product['item']['name']}}</h4></a>
+																	<a href="{{ route('admin-prod-index',$product['item']['slug']) }}"><h4 class="product-title">{{mb_strlen($product['item']['name'],'utf-8') > 45 ? mb_substr($product['item']['name'],0,45,'utf-8').'...' : $product['item']['name']}}</h4></a>
 
 																	<span class="cart-product-info">
 																		<span class="cart-product-qty" id="cqt{{$product['item']['id'].$product['size'].$product['color'].str_replace(str_split(' ,'),'',$product['values'])}}">{{$product['qty']}}</span><span>{{ $product['item']['measure'] }}</span>
@@ -26,7 +26,7 @@
 															</div><!-- End .product-details -->
 
 															<figure class="product-image-container">
-																<a href="{{ route('front.product', $product['item']['slug']) }}" class="product-image">
+																<a href="{{ route('admin-prod-index', $product['item']['slug']) }}" class="product-image">
 																	<img src="{{ $product['item']['photo'] ? filter_var($product['item']['photo'], FILTER_VALIDATE_URL) ?$product['item']['photo']:asset('assets/images/products/'.$product['item']['photo']):asset('assets/images/noimage.png') }}" alt="product">
 																</a>
 																<div class="cart-remove" data-class="cremove{{ $product['item']['id'].$product['size'].$product['color'].str_replace(str_split(' ,'),'',$product['values']) }}" data-href="{{ route('product.cart.remove',$product['item']['id'].$product['size'].$product['color'].str_replace(str_split(' ,'),'',$product['values'])) }}" title="Remove Product">

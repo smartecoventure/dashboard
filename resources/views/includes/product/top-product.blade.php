@@ -1,6 +1,6 @@
 										<div class="col-lg-2 col-md-3 col-6">
 
-											<a class="item" href="{{ route('front.product', $prod->slug) }}">
+											<a class="item" href="{{ route('admin-prod-index', $prod->slug) }}">
 												<div class="item-img">
 												@if(!empty($prod->features))
 														<div class="sell-area">

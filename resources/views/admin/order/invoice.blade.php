@@ -113,7 +113,7 @@
                                                 @endphp
                                                 @if(isset($user))
                                                 <a target="_blank"
-                                                    href="{{ route('front.product', $product['item']['slug']) }}">{{ $product['item']['name']}}</a>
+                                                    href="{{ route('admin-prod-index', $product['item']['slug']) }}">{{ $product['item']['name']}}</a>
                                                 @else
                                                 <a href="javascript:;">{{$product['item']['name']}}</a>
                                                 @endif

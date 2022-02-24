@@ -11,7 +11,7 @@
 									<div class="col-lg-2 col-md-3 col-6 remove-padding">
 
 
-										<a href="{{ route('front.product', $prod->slug) }}" class="item">
+										<a href="{{ route('admin-prod-index', $prod->slug) }}" class="item">
 											<div class="item-img">
 												@if(!empty($prod->features))
 													<div class="sell-area">
@@ -91,7 +91,7 @@
 
 									<div class="col-lg-2 col-md-3 col-6 remove-padding">
 
-										<a href="{{ route('front.product', $prod->slug) }}" class="item">
+										<a href="{{ route('admin-prod-index', $prod->slug) }}" class="item">
 											<div class="item-img">
 												@if(!empty($prod->features))
 													<div class="sell-area">
@@ -175,7 +175,7 @@
 
 							<div class="col-lg-2 col-md-3 col-6 remove-padding">
 
-										<a href="{{ route('front.product', $prod->slug) }}" class="item">
+										<a href="{{ route('admin-prod-index', $prod->slug) }}" class="item">
 											<div class="item-img">
 												@if(!empty($prod->features))
 													<div class="sell-area">
